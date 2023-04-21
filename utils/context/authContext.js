@@ -54,4 +54,6 @@ const useAuth = () => {
   return context;
 };
 
+// const { user } = useAuth();
+
 export { AuthProvider, useAuth, AuthConsumer };

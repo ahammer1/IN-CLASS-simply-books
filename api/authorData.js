@@ -5,7 +5,7 @@ const dbUrl = clientCredentials.databaseURL;
 
 // FIXME:  GET ALL AUTHORS
 const getAuthors = (uid) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/authors.json?orderBy="uid"&equalTo="${uid}"`, {
+  fetch(`${dbUrl}/authors/.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

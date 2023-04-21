@@ -4,8 +4,8 @@ import { clientCredentials } from '../utils/client';
 
 const dbUrl = clientCredentials.databaseURL;
 
-const getBooks = () => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/books.json`, {
+const getBooks = (uid) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/books/.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -40,7 +40,7 @@ AuthorCard.propTypes = {
     email: PropTypes.string,
     last_name: PropTypes.string,
     favorite: PropTypes.bool,
-    firebaseKey: PropTypes.string.isRequired,
+    firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

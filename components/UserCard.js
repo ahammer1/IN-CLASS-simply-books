@@ -1,34 +1,25 @@
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-// const User = ({ user }) => {
-//   const { image, name, email, lastLogin } = user;
+function User({ userObj }) {
+  return (
+    <div className="text-light text-center">
+      <h2 className="mb-4">{userObj.displayName}</h2>
+      <p>{userObj.email}</p>
+      <p>{userObj.metadata.lastSignInTime}</p>
+    </div>
+  );
+}
 
-//   return (
-//     <div>
-//       <img src={image} alt={name} />
-//       <h2>{name}</h2>
-//       <p>{email}</p>
-//       <p>Last login: {lastLogin}</p>
-//     </div>
-//   );
-// };
+export default User;
 
-// User.propTypes = {
-//   user: PropTypes.shape({
-//     image: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     email: PropTypes.string.isRequired,
-//     lastLogin: PropTypes.string.isRequired,
-//   }).isRequired,
-// };
+User.propTypes = {
+  userObj: PropTypes.shape({
+    displayName: PropTypes.string,
+    email: PropTypes.string,
+    metadata: PropTypes.shape({
+      lastSignInTime: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 
-// User.defaultProps = {
-//   user: {
-//     image: '',
-//     name: '',
-//     email: '',
-//     lastLogin: '',
-//   },
-// };
-
-// export default User;
+};
